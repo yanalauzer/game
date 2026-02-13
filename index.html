@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="score">Счет: <span id="score">0</span></div>
+        </div>
+        
+        <div class="board" id="board"></div>
+        
+        <div class="buttons">
+            <button id="newGame">🔄 Новая</button>
+            <button id="undo" disabled>↩️ Отмена</button>
+            <button id="showRecords">🏆 Рекорды</button>
+        </div>
+
+        <div class="mobile-controls" id="mobileControls">
+            <button data-dir="up">⬆️</button>
+            <button data-dir="left">⬅️</button>
+            <button data-dir="down">⬇️</button>
+            <button data-dir="right">➡️</button>
+        </div>
+
+        <div class="records" id="records" style="display: none;">
+            <h3>Топ-10 <span id="closeRecords">✕</span></h3>
+            <table>
+                <thead>
+                    <tr><th>Имя</th><th>Счет</th><th>Дата</th></tr>
+                </thead>
+                <tbody id="recordsBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="overlay" id="gameOverlay" style="display: none;">
+        <div class="modal">
+            <h2>Игра окончена!</h2>
+            <div id="saveBlock">
+                <p>Ваш счет: <span id="finalScore"></span></p>
+                <input type="text" id="playerName" placeholder="Ваше имя" maxlength="15">
+                <div class="modal-buttons">
+                    <button id="saveRecord">💾 Сохранить</button>
+                    <button id="playAgain">🔄 Заново</button>
+                </div>
+            </div>
+            <div id="savedBlock" style="display: none;">
+                <p>Ваш рекорд сохранен!</p>
+                <button id="playAgain2">🔄 Заново</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
