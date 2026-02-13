@@ -32,5 +32,5 @@
 -Сохранение состояния игры, сохранения лидерборда
 
 ## Деплой в Yandex Cloud  
-Ссылка на деплой: [[https://todo-list-yanalauzer.website.yandexcloud.net](https://todo-list-yanalauzer.website.yandexcloud.net/)](https://2048lauzer.website.yandexcloud.net/)
+Ссылка на деплой: (https://2048lauzer.website.yandexcloud.net/)
 ```
