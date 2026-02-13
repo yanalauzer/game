@@ -306,7 +306,28 @@ document.getElementById('playAgain2').addEventListener('click', () => {
     document.getElementById('gameOverlay').style.display = 'none';
 });
 
+// Свайпы для мобильных
+let touchX, touchY;
 
+document.getElementById('board').addEventListener('touchstart', e => {
+    touchX = e.touches[0].clientX;
+    touchY = e.touches[0].clientY;
+});
+
+document.getElementById('board').addEventListener('touchend', e => {
+    if (document.getElementById('gameOverlay').style.display === 'flex') return;
+    
+    const dx = e.changedTouches[0].clientX - touchX;
+    const dy = e.changedTouches[0].clientY - touchY;
+    
+    if (Math.abs(dx) > 30 || Math.abs(dy) > 30) {
+        if (Math.abs(dx) > Math.abs(dy)) {
+            game.move(dx > 0 ? 'right' : 'left');
+        } else {
+            game.move(dy > 0 ? 'down' : 'up');
+        }
+    }
+});
 
 // Автосохранение
 window.addEventListener('beforeunload', () => game.saveGame());
